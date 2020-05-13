@@ -29,5 +29,20 @@ namespace Lab08Library.Tests
             //assert
             Assert.Equal(0, testCollection.Count);
         }
+
+        [Fact]
+
+        public void Can_Add_To_List()
+        {
+            //arrange
+            Library<int> testCollection = new Library<int>();
+
+            //Act
+            testCollection.Add(13);
+
+            //Assert
+            Assert.Equal(1, testCollection.Count);
+            Assert.Equal(13, testCollection[0]);
+        }
     }
 }
