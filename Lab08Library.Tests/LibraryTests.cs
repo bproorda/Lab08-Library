@@ -44,5 +44,41 @@ namespace Lab08Library.Tests
             Assert.Equal(1, testCollection.Count);
             Assert.Equal(13, testCollection[0]);
         }
+
+        [Fact]
+        public void Can_Add_Beyond_Capacity()
+        {
+            //arrange
+            int capacity = 1;
+            Library<int> testCollection = new Library<int>(capacity);
+            testCollection.Add(21);
+
+            //act
+            testCollection.Add(87);
+
+            //assert
+            Assert.Equal(2, testCollection.Count);
+            Assert.Equal(87, testCollection[1]);
+
+        }
+
+        [Fact]
+        public void Can_enumerate_a_list()
+        {
+            Library<string> ourList = new Library<string>
+            {
+                "Matt",
+                "Brenn"
+            };
+
+            foreach (string item in ourList)
+            {
+                Assert.NotNull(item);
+            }
+
+            Assert.Equal(
+                new[] { "Matt", "Brenn" },
+                ourList);
+        }
     }
 }
