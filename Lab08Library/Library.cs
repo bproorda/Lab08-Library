@@ -43,6 +43,19 @@ namespace Lab08Library
             count--;
         }
 
+        public string[] ViewAllBooks()
+        {
+            string[] output = new string[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                output[i] = books[i].ToString();
+            }
+            
+
+            return output;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)

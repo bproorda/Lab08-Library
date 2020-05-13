@@ -119,8 +119,13 @@ namespace Lab08Library.Tests
             testCollection.Add("Twilight");
 
             // Act
-            string actual = testCollection.ViewAllBooks();
-            string expected = "Robinson Crusoe, Huckleberry Finn, Twilight";
+            string[] actual = testCollection.ViewAllBooks();
+            string[] expected = new string[]
+            {
+            "Robinson Crusoe",
+            "Huckleberry Finn",
+            "Twilight"
+            };
 
             //Assert
             Assert.Equal(expected, actual);
