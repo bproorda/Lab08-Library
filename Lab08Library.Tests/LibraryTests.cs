@@ -105,7 +105,7 @@ namespace Lab08Library.Tests
 
 
             // Act
-            testCollection.Remove("Self Help");
+            testCollection.Remove(0);
 
             // Assert
             string[] actual = testCollection.ViewAllBooks();

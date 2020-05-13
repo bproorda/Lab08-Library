@@ -38,18 +38,22 @@ namespace Lab08Library
             count++;
         }
 
-        public void Remove(T value)
+        public void Remove(int bookToRemove)
         {
+            for (int i = 1; i <= count; i++)
+            {
+                books[bookToRemove + (i-1)] = books[bookToRemove + i];
+            }
             count--;
         }
 
-        public string[] ViewAllBooks()
+        public T[] ViewAllBooks()
         {
-            string[] output = new string[count];
+            T[] output = new T[count];
 
             for (int i = 0; i < count; i++)
             {
-                output[i] = books[i].ToString();
+                output[i] = books[i];
             }
             
 
