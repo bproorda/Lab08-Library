@@ -90,7 +90,7 @@ namespace Lab08Library.Tests
             testCollection.Add(17);
 
             // Act
-            testCollection.Remove(17);
+            testCollection.Remove(0);
 
             // Assert
             Assert.Equal(0, testCollection.Count);
