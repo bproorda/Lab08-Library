@@ -18,5 +18,16 @@ namespace Lab08Library.Tests
             //Assert
             Assert.Equal("Bear", actual);
         }
+
+        [Fact]
+
+        public void Initial_list_is_Empty()
+        {
+            //act
+            Library<int> testCollection = new Library<int>();
+
+            //assert
+            Assert.Equal(0, testCollection.Count);
+        }
     }
 }
