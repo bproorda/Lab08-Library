@@ -81,5 +81,19 @@ namespace Lab08Library.Tests
                 new[] { "Matt", "Brenn" },
                 ourList);
         }
+
+        [Fact]
+        public void Can_remove_book()
+        {
+            // Arrange
+            Library<int> testCollection = new Library<int>();
+            testCollection.Add(17);
+
+            // Act
+            testCollection.Remove(17);
+
+            // Assert
+            Assert.Equal(0, testCollection.Count);
+        }
     }
 }
