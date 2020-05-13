@@ -95,5 +95,35 @@ namespace Lab08Library.Tests
             // Assert
             Assert.Equal(0, testCollection.Count);
         }
+        // [Fact]
+        //public void Can_REALLY_remove_book()
+        //{
+        //    // Arrange
+        //    Library<int> testCollection = new Library<int>();
+        //    testCollection.Add(17);
+
+        //    // Act
+        //    testCollection.Remove(17);
+
+        //    // Assert
+        //    Assert.Equal(0, testCollection.Count);
+        //}
+
+        [Fact]
+        public void Can_view_all_books()
+        {
+            // Arrange
+            Library<string> testCollection = new Library<string>();
+            testCollection.Add("Robinson Crusoe");
+            testCollection.Add("Huckleberry Finn");
+            testCollection.Add("Twilight");
+
+            // Act
+            string actual = testCollection.ViewAllBooks();
+            string expected = "Robinson Crusoe, Huckleberry Finn, Twilight";
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
