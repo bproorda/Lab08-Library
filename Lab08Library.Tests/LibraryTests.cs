@@ -10,13 +10,14 @@ namespace Lab08Library.Tests
         {
             //arrange
             Author gb = new Author("Greg", "Bear");
-            Book songs = new Book("Songs of Earth and Power", gb);
+            Book songs = new Book("Songs of Earth and Power", gb, Book.Genres.Speculative);
 
             //act
             string actual = songs.bookAuthor.LastName;
 
             //Assert
             Assert.Equal("Bear", actual);
+            //Assert.Equal("What?", $"{songs.Genre}");
         }
 
         [Fact]
