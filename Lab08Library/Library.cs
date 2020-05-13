@@ -38,6 +38,11 @@ namespace Lab08Library
             count++;
         }
 
+        public void Remove(T value)
+        {
+            count--;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
