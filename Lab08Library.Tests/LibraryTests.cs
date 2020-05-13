@@ -95,19 +95,23 @@ namespace Lab08Library.Tests
             // Assert
             Assert.Equal(0, testCollection.Count);
         }
-        // [Fact]
-        //public void Can_REALLY_remove_book()
-        //{
-        //    // Arrange
-        //    Library<int> testCollection = new Library<int>();
-        //    testCollection.Add(17);
+        [Fact]
+        public void Can_REALLY_remove_book()
+        {
+            // Arrange
+            Library<string> testCollection = new Library<string>();
+            testCollection.Add("Self Help");
+            testCollection.Add("Help");
 
-        //    // Act
-        //    testCollection.Remove(17);
 
-        //    // Assert
-        //    Assert.Equal(0, testCollection.Count);
-        //}
+            // Act
+            testCollection.Remove("Self Help");
+
+            // Assert
+            string[] actual = testCollection.ViewAllBooks();
+            string[] expected = new string[] { "Help" };
+            Assert.Equal(expected, actual);
+        }
 
         [Fact]
         public void Can_view_all_books()
