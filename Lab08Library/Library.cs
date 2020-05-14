@@ -38,6 +38,28 @@ namespace Lab08Library
             count++;
         }
 
+        public void Remove(int bookToRemove)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                books[bookToRemove + (i-1)] = books[bookToRemove + i];
+            }
+            count--;
+        }
+
+        public T[] ViewAllBooks()
+        {
+            T[] output = new T[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                output[i] = books[i];
+            }
+            
+
+            return output;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
