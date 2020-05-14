@@ -8,7 +8,7 @@ namespace Lab08Library
     public class Library<T> : IEnumerable<T>
     {
         //Fields
-        T[] books;
+       public T[] books;
         int count;
 
         //Constructors
@@ -38,7 +38,7 @@ namespace Lab08Library
             books[count] = value;
             count++;
         }
-
+        //Check for edge cases with tests
         public void Remove(int bookToRemove)
         {
             for (int i = 1; i <= count; i++)
@@ -47,19 +47,7 @@ namespace Lab08Library
             }
             count--;
         }
-
-        public string[] ViewAllBooks()
-        {
-            string[] output = new string[count];
-
-            for (int i = 0; i < count; i++)
-            {
-                output[i] = books[i].ToString();
-            }
-            
-
-            return output;
-        }
+ 
 
         public IEnumerator<T> GetEnumerator()
         {

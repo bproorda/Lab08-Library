@@ -7,7 +7,7 @@ namespace Lab08Library
     public class BookBag<T> : IEnumerable<T>
     {
         //Fields
-        T[] books;
+        public T[] books;
         int count;
 
         //Constructors
@@ -47,18 +47,6 @@ namespace Lab08Library
             count--;
         }
 
-        public T[] ViewAllBooks()
-        {
-            T[] output = new T[count];
-
-            for (int i = 0; i < count; i++)
-            {
-                output[i] = books[i];
-            }
-
-
-            return output;
-        }
 
         public IEnumerator<T> GetEnumerator()
         {
