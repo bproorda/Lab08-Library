@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using static Lab08Library.Book;
 
 namespace Lab08Library
 {
@@ -71,6 +72,14 @@ namespace Lab08Library
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public static void AddaBook(string title, string firstName, string lastName, int pageNumber, Genres genre)
+        {
+           Author theAuthor = new Author(firstName, lastName);
+           Book book = new Book(title, theAuthor, pageNumber, genre);
+           Library.Add(book);
+          
         }
     }
 }
