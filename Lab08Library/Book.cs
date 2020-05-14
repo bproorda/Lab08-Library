@@ -6,7 +6,7 @@
         {
             this.Title = title;
             this.bookAuthor = author;
-            this.NumberOfPages = numberPages,
+            this.NumberOfPages = numberPages;
             this.Genre = genre;
         }
 
@@ -25,5 +25,7 @@
             History,
             Science,
         }
+
+     
     }
 }

@@ -10,7 +10,7 @@ namespace Lab08Library.Tests
         {
             //arrange
             Author gb = new Author("Greg", "Bear");
-            Book songs = new Book("Songs of Earth and Power", gb, Book.Genres.Speculative);
+            Book songs = new Book("Songs of Earth and Power", gb, 750, Book.Genres.Speculative);
 
             //act
             string actual = songs.bookAuthor.LastName;
@@ -114,7 +114,7 @@ namespace Lab08Library.Tests
         }
 
         [Fact]
-        public void Can_view_all_books()
+        public void Can_view_all_items()
         {
             // Arrange
             Library<string> testCollection = new Library<string>();
@@ -134,5 +134,30 @@ namespace Lab08Library.Tests
             //Assert
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public void Can_view_all_Books()
+        {
+            //arrange
+            Author gb = new Author("Greg", "Bear");
+            Book songs = new Book("Songs of Earth and Power", gb, 750, Book.Genres.Speculative);
+            Author JrrT = new Author("J.R.R.", "Tolkien");
+            Book lotr = new Book("Lord of the Rings", JrrT, 1952, Book.Genres.Fantasy);
+
+            Library<Book> testCollection = new Library<Book>();
+            testCollection.Add(songs);
+            testCollection.Add(lotr);
+
+
+            //act
+            string[] actual = testCollection.ViewAllBooks();
+            string[] expected = new string[] { "1", "2" };
+
+            //assert
+            Assert.Equal(expected, actual);
+
+
+        }
+      
+
     }
 }

@@ -48,13 +48,13 @@ namespace Lab08Library
             count--;
         }
 
-        public T[] ViewAllBooks()
+        public string[] ViewAllBooks()
         {
-            T[] output = new T[count];
+            string[] output = new string[count];
 
             for (int i = 0; i < count; i++)
             {
-                output[i] = books[i];
+                output[i] = books[i].ToString();
             }
             
 
@@ -74,12 +74,12 @@ namespace Lab08Library
             return GetEnumerator();
         }
 
-        public static void AddaBook(string title, string firstName, string lastName, int pageNumber, Genres genre)
+        
+  
+        
+        public string ToString(Book book)
         {
-           Author theAuthor = new Author(firstName, lastName);
-           Book book = new Book(title, theAuthor, pageNumber, genre);
-           Library.Add(book);
-          
+            return book.Title;
         }
     }
 }
