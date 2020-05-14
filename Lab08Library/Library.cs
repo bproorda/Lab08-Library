@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using static Lab08Library.Book;
 
 namespace Lab08Library
 {
     public class Library<T> : IEnumerable<T>
     {
         //Fields
-        T[] books;
+       public T[] books;
         int count;
 
         //Constructors
@@ -37,7 +38,7 @@ namespace Lab08Library
             books[count] = value;
             count++;
         }
-
+        //Check for edge cases with tests
         public void Remove(int bookToRemove)
         {
             for (int i = 1; i <= count; i++)
@@ -46,19 +47,7 @@ namespace Lab08Library
             }
             count--;
         }
-
-        public T[] ViewAllBooks()
-        {
-            T[] output = new T[count];
-
-            for (int i = 0; i < count; i++)
-            {
-                output[i] = books[i];
-            }
-            
-
-            return output;
-        }
+ 
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -71,6 +60,14 @@ namespace Lab08Library
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        
+  
+        
+        public string ToString(Book book)
+        {
+            return book.Title;
         }
     }
 }

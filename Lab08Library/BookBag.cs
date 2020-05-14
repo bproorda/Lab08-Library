@@ -7,7 +7,7 @@ namespace Lab08Library
     public class BookBag<T> : IEnumerable<T>
     {
         //Fields
-        T[] books;
+        public T[] books;
         int count;
 
         //Constructors
@@ -37,6 +37,16 @@ namespace Lab08Library
             books[count] = value;
             count++;
         }
+
+        public void Remove(int bookToRemove)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                books[bookToRemove + (i - 1)] = books[bookToRemove + i];
+            }
+            count--;
+        }
+
 
         public IEnumerator<T> GetEnumerator()
         {
